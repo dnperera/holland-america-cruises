@@ -1,0 +1,72 @@
+.container {
+  width: 80%;
+  background-color: $color-background;
+  margin: 0 auto;
+  &__heading {
+    display: block;
+    padding: 2rem 0 0 1rem;
+    text-align: left;
+    font-size: 2.3rem;
+    border-bottom: 0.1rem solid rgb(156, 155, 155);
+    @include respond(phone) {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__itinerary {
+    background-color: $color-itineray-bgc;
+    margin: 2rem 0;
+    border: 0.1rem solid rgb(214, 213, 213);
+    border-radius: 0.3rem;
+
+    &--heading {
+      padding: 1rem 1rem;
+      background-color: $color-navbar-bgc;
+      color: $color-navbar-font;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    &__summery {
+      display: flex;
+      @include respond(phone) {
+        display: block;
+      }
+    }
+    &--map {
+      position: relative;
+      flex: 1;
+      border: 0.1rem solid rgb(214, 213, 213);
+      margin: 1rem;
+      @include respond(phone) {
+        text-align: center;
+      }
+      & > img {
+        width: 100%;
+      }
+      & > a {
+        position: absolute;
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        background-color: $color-background;
+        padding: 1rem;
+        bottom: 0%;
+        width: 100%;
+        font-size: 1rem;
+        font-weight: 700;
+        color: $color-primary-font;
+      }
+    }
+
+    &--ports {
+      flex: 1;
+      margin: 1rem;
+      border: 0.1rem soild #000;
+    }
+    &--pricing {
+      flex: 1;
+      margin: 1rem;
+      border: 0.1rem soild #000;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+@media (max-width: 600px) {
+  .navigation > #navigation__checkbox:checked + .navigation__items {
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+  }
+
+  .navigation > .navigation__items > .navigation__item:active {
+    background-color: red;
+  }
+}

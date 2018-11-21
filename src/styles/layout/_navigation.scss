@@ -1,0 +1,106 @@
+.navigation {
+  height: 10rem;
+  width: 100%;
+  position: relative;
+  @include respond(phone) {
+    height: 8rem;
+  }
+  background-color: $color-navbar-bgc;
+  &__logobox {
+    display: inline-block;
+    float: left;
+    margin-right: 5rem;
+  }
+  &__logo {
+    display: inline-block;
+    width: 20rem;
+    height: 10rem;
+
+    @include respond(phone) {
+      width: 15rem;
+      height: 8rem;
+    }
+  }
+
+  &__btn {
+    display: none;
+    @include respond(phone) {
+      display: inline-block;
+      position: absolute;
+      right: 0px;
+      top: 0px;
+    }
+  }
+  &__label {
+    @include respond(phone) {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      padding: 13px;
+    }
+    & > span {
+      @include respond(phone) {
+        display: block;
+        width: 25px;
+        height: 10px;
+        border-top: 2px solid #eee;
+      }
+    }
+  }
+
+  & > input[type="checkbox"] {
+    display: none;
+    @include respond(phone) {
+      display: hidden;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    @include respond(phone) {
+      position: absolute;
+      display: block;
+      width: 100%;
+      background-color: rgb(212, 211, 211);
+      height: 0;
+      transition: all 0.5s ease-in;
+      overflow-y: hidden;
+      top: 8rem;
+      left: 0rem;
+    }
+  }
+
+  &__item {
+    text-decoration: none;
+    display: inline-block;
+    padding: 2rem 1rem;
+    margin: 3rem 1rem;
+    font-size: 1.5rem;
+    color: $color-navbar-font;
+
+    @include respond(phone) {
+      display: block;
+      width: 100%;
+      color: #000;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+  }
+
+  &__item:hover {
+    @include respond(phone) {
+      background-color: rgba(0, 0, 0, 0.3);
+      color: rgb(243, 188, 7);
+    }
+  }
+}
+
+@include respond(phone) {
+  .navigation > #navigation__checkbox:checked + .navigation__items {
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+  }
+}
